@@ -1,0 +1,5 @@
+node_modules/
+.cockpit-profile/
+*.log
+.DS_Store
+tests/.tmp/

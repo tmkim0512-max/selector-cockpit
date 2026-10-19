@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Selector Cockpit",
+  "version": "0.1.0",
+  "description": "Hover any element to see selector candidates with their uniqueness; reconcile Page Object JSON against the live page.",
+  "minimum_chrome_version": "116",
+  "devtools_page": "devtools.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "core.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:4777/*"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4THWUpxUq5mePR+JooWUAJ/eNpnbCqudS+MZ3PGvrNeDnbQenUkONOCig4nr9LYOd9povnEDi9xxawEXeNsupzdZjvcQAFd7W4r+Ka63xVRznmGJo17LoAwHPS5rZ5rEo/7OJBJQ6R0EUFMtip/ZSIoAhVka1OVnFgNFHvEXQXWZiUVODW38w/k8COfx41n9Y//F/Chghv8+hftPoNjH26So9AcsqBZtRIw3LabgGBjXGJ+0OMlmZPnbB/gIwED+czxdVUFpcPF2lzqqh64aLRWBsxJoGka2uC9zM8v1g242NeVZYEPw3LDk3ihEG7+poCJ0INeQDtKvYEEPY57p7QIDAQAB"
+}

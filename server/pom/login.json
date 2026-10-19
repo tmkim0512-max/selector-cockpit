@@ -1,0 +1,13 @@
+{
+  "name": "login",
+  "url": "https://the-internet.herokuapp.com/login",
+  "urlPattern": "/login",
+  "elements": {
+    "heading": "role=heading[name=\"Login Page\"]",
+    "username": "#username",
+    "password": "#password",
+    "loginButton": "button[type=\"submit\"]",
+    "anyInput": { "selector": "input", "note": "intentionally ambiguous: matches both text fields (2)" },
+    "loginButtonOld": { "selector": "#login-btn", "note": "intentionally broken: this id does not exist on the page (0)" }
+  }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Selector Cockpit</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header>
+    <strong>Selector Cockpit</strong>
+    <span id="server-badge" class="badge offline" title="local POM server">server: …</span>
+    <span id="page-url" class="muted"></span>
+  </header>
+
+  <section class="row">
+    <label>POM page
+      <select id="page-select"><option value="">(none)</option></select>
+    </label>
+    <button id="btn-check" title="Count every POM selector on the inspected page">Check POM</button>
+    <button id="btn-inspect" class="toggle" title="Hover elements in the page to see selector candidates">Inspect: off</button>
+    <button id="btn-pick" title="Click an element in the page to add it to the POM">Pick element</button>
+    <button id="btn-clear" title="Remove highlights">Clear</button>
+    <label class="file">Load JSON file <input id="file-input" type="file" accept="application/json"></label>
+  </section>
+
+  <section id="summary" class="muted"></section>
+
+  <table id="pom-table">
+    <thead><tr><th>element</th><th>selector</th><th>matches</th><th>status</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <section id="pick-box" class="card hidden">
+    <h3>Add picked element to POM</h3>
+    <div id="pick-candidates"></div>
+    <div class="row">
+      <input id="pick-name" placeholder="element name (e.g. loginButton)">
+      <button id="btn-add">Add to POM</button>
+      <button id="btn-cancel-pick">Cancel</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>Hovered element</h3>
+    <pre id="hover-out" class="muted">turn on Inspect and hover an element</pre>
+  </section>
+
+  <footer id="log" class="muted"></footer>
+
+  <script src="core.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>
